@@ -1,11 +1,11 @@
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\service\UserServiceImpl.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\service\UserDetailsServiceImpl.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\model\User.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\service\SecurityService.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\repository\UserRepository.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\web\UserController.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\model\Role.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\repository\RoleRepository.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\service\UserService.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\validator\UserValidator.java
-C:\Users\jorge\Desktop\UNIVERSIDAD JORGE\TERCER ANO\SEGUNDO CUATRIMESTRE\HERRAMIENTAS Y MÉTODOS DE INGENERÍA DEL SOFTWARE\PRACTICAS\SESION 6\registration-login-spring-xml-maven-jsp-mysql\src\main\java\com\hellokoding\account\service\SecurityServiceImpl.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\service\UserDetailsServiceImpl.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\web\UserController.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\repository\RoleRepository.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\service\UserServiceImpl.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\service\UserService.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\model\Role.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\service\SecurityService.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\model\User.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\repository\UserRepository.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\validator\UserValidator.java
+C:\Users\jorge\git\proyectoSpringFernandezMora\account\src\main\java\com\hellokoding\account\service\SecurityServiceImpl.java
