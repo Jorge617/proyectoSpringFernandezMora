@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Edit your profile</title>
+    <title>Create an account</title>
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
@@ -30,23 +30,36 @@
 
 <div class="container">
 
-
-    <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form method="POST" action="${contextPath}/login" class="form-signin">
-            <h2 class="form-heading">Edit your profile, ${pageContext.request.userPrincipal.name}</h2>
-            <div class="form-group ${error != null ? 'has-error' : ''}">
-                <span>${message}</span>
-                <input name="username" type="text" class="form-control" placeholder="Username"
-                       autofocus="true"/>
-                <input name="password" type="password" class="form-control" placeholder="Password"/>
-                <span>${error}</span>
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+    <form:form method="POST" modelAttribute="editprofileform" class="form-signin">
+        <h2 class="form-signin-heading">Edit your profile</h2>
+        <spring:bind path="username">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="username" class="form-control" value="${pageContext.request.userPrincipal.name}"
+                            autofocus="true"></form:input>
+                <form:errors path="username"></form:errors>
             </div>
-        </form>
-    </c:if>
+        </spring:bind>
 
+        <spring:bind path="password">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
+                <form:errors path="password"></form:errors>
+            </div>
+        </spring:bind>
+
+        <spring:bind path="passwordConfirm">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="password" path="passwordConfirm" class="form-control"
+                            placeholder="Confirm your password"></form:input>
+                <form:errors path="passwordConfirm"></form:errors>
+            </div>
+        </spring:bind>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form:form>
+    
+    <span>${message}</span>
+    
 
 </div>
 <!-- /container -->

@@ -22,13 +22,20 @@ public class UserController {
 
     @Autowired
     private UserValidator userValidator;
-
+    
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
 
         return "registration";
     }
+    
+    @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
+    public String editprofile(Model model) {
+    	model.addAttribute("editprofileform", new User());
+
+        return "editprofile";
+    } 
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
@@ -44,6 +51,24 @@ public class UserController {
 
         return "redirect:/welcome";
     }
+    
+    @RequestMapping(value = "/editprofile", method = RequestMethod.POST)
+    public String editprofile(@ModelAttribute("editprofileform") User userForm, BindingResult bindingResult, Model model) {
+        userValidator.validateUpdateUser(userForm, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "editprofile";
+        }
+        
+        userService.updateUser(userForm);
+        
+        System.out.println(model.toString());
+        
+        model.addAttribute("message", "Your data has been updated successfully.");
+
+   
+        return "redirect:/editprofile";
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -56,13 +81,9 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
-    public String editprofile(Model model, String error, String logout) {
-        if (error != null) model.addAttribute("error", "Your username and password is invalid.");
-        if (logout != null)  model.addAttribute("message", "You have been logged out successfully.");
+   
 
-        return "editprofile";
-    }
+
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model) {
