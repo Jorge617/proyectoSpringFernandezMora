@@ -30,7 +30,7 @@
 
 <div class="container">
 
-    <form:form method="POST" modelAttribute="editprofileform" class="form-signin">
+    <form:form method="POST" modelAttribute="editprofileform" action="${contextPath}/editprofile?message" class="form-signin">
         <h2 class="form-signin-heading">Edit your profile</h2>
         <spring:bind path="username">
             <div class="form-group ${status.error ? 'has-error' : ''}">
@@ -56,9 +56,11 @@
         </spring:bind>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+		<span>${message}</span>
+        
     </form:form>
     
-    <span>${message}</span>
+
     
 
 </div>

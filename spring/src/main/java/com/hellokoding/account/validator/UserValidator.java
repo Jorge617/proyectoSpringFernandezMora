@@ -44,7 +44,6 @@ public class UserValidator implements Validator {
     public void validateUpdateUser(Object o, Errors errors) {
         User user = (User) o;
                
-
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty");
         if (user.getPassword().length() < 8 || user.getPassword().length() > 32) {
             errors.rejectValue("password", "Size.userForm.password");
