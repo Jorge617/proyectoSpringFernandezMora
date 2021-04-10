@@ -14,79 +14,75 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class UserController {
-    @Autowired
-    private UserService userService;
+	@Autowired
+	private UserService userService;
 
-    @Autowired
-    private SecurityService securityService;
+	@Autowired
+	private SecurityService securityService;
 
-    @Autowired
-    private UserValidator userValidator;
-    
-    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public String registration(Model model) {
-        model.addAttribute("userForm", new User());
+	@Autowired
+	private UserValidator userValidator;
 
-        return "registration";
-    }
-    
-    @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
-    public String editprofile(Model model) {
-    	model.addAttribute("editprofileform", new User());
+	@RequestMapping(value = "/registration", method = RequestMethod.GET)
+	public String registration(Model model) {
+		model.addAttribute("userForm", new User());
 
-        return "editprofile";
-    } 
+		return "registration";
+	}
 
-    @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
-        userValidator.validate(userForm, bindingResult);
+	@RequestMapping(value = "/editprofile", method = RequestMethod.GET)
+	public String editprofile(Model model, String message) {
+		model.addAttribute("editprofileform", new User());
 
-        if (bindingResult.hasErrors()) {
-            return "registration";
-        }
+		if (message != null) {
+			model.addAttribute("message", "Your data has been updated successfully.");
+		}
 
-        userService.save(userForm);
+		return "editprofile";
+	}
 
-        securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
+	@RequestMapping(value = "/registration", method = RequestMethod.POST)
+	public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
+		userValidator.validate(userForm, bindingResult);
 
-        return "redirect:/welcome";
-    }
-    
-    @RequestMapping(value = "/editprofile", method = RequestMethod.POST)
-    public String editprofile(@ModelAttribute("editprofileform") User userForm, BindingResult bindingResult, Model model) {
-        userValidator.validateUpdateUser(userForm, bindingResult);
+		if (bindingResult.hasErrors()) {
+			return "registration";
+		}
 
-        if (bindingResult.hasErrors()) {
-            return "editprofile";
-        }
-        
-        userService.updateUser(userForm);
-        
-        System.out.println(model.toString());
-        
-        model.addAttribute("message", "Your data has been updated successfully.");
+		userService.save(userForm);
 
-   
-        return "redirect:/editprofile";
-    }
+		securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(Model model, String error, String logout) {
-        if (error != null)
-            model.addAttribute("error", "Your username and password is invalid.");
+		return "redirect:/welcome";
+	}
 
-        if (logout != null)
-            model.addAttribute("message", "You have been logged out successfully.");
+	@RequestMapping(value = "/editprofile", method = RequestMethod.POST)
+	public String editprofile(@ModelAttribute("editprofileform") User userForm, BindingResult bindingResult,
+			Model model) {
+		userValidator.validateUpdateUser(userForm, bindingResult);
 
-        return "login";
-    }
+		if (bindingResult.hasErrors()) {
+			return "editprofile";
+		}
 
-   
+		userService.updateUser(userForm);
 
+		return "redirect:/editprofile?message";
+	}
 
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model, String error, String logout) {
+		if (error != null)
+			model.addAttribute("error", "Your username and password is invalid.");
 
-    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
-        return "welcome";
-    }
+		if (logout != null)
+			model.addAttribute("message", "You have been logged out successfully.");
+
+		return "login";
+	}
+
+	@RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
+	public String welcome(Model model) {
+		return "welcome";
+	}
 }
